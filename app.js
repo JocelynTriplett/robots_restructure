@@ -21,7 +21,8 @@ app.set('view engine', 'mustache');
 app.use('/:dynamic', function (req, res) {
   MongoClient.connect(mongoURL, function (err, db) {
     const robots = db.collection('robots');
-    robots.find({'id': 5}).toArray(function(err, docs) {
+    var robot_id = req.params.dynamic;
+    robots.find({id: parseInt(req.params.dynamic)}).toArray(function(err, docs) {
       console.log(docs);
       res.render('user', {robots: docs})
     })
