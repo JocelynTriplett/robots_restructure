@@ -1,0 +1,19 @@
+{
+  "name": "robots",
+  "version": "1.0.0",
+  "description": "linkedIn for robots",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Jocelyn Triplett",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5",
+    "request": "^2.81.0"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Directory</title>
+    <meta name="description" content="DESCRIPTION">
+   <link rel="stylesheet" type="text/css" href="user_styles.css" />
+</head>
+
+<body>
+  <div class="row1">
+    <img src="{{avatar}}" />
+    <div class="info">
+      <h1>{{name}}</h1>
+      <p>
+        {{#address.city}}{{address.city}},{{/address.city}}
+        {{address.country}} |
+          {{job}}</p>
+      <p>{{email}} | {{phone}}</p>
+    </div>
+  </div>
+    <div class="row2">
+      {{#education}}<h3>Education: {{{education}}}</h3>{{/education}}
+        <h3>Skills:</h3>
+        {{#skills}}
+        <li>{{.}}</li>
+        {{/skills}}
+
+
+    </div>
+  </div>
+</body>
+
+</html>

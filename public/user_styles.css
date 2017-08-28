@@ -1,0 +1,38 @@
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+img {
+  border-radius: 100px;
+  border: solid 1px gray;
+  height: 10vw;
+  width: 10vw;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  margin-bottom: 5px;
+}
+p {
+  margin: 5px;
+}
+.row1 {
+  display: flex;
+  flex-direction: row;
+}
+.row2 {
+  display: flex;
+  flex-direction: column;
+}
