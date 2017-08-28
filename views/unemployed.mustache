@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Directory</title>
+    <meta name="description" content="DESCRIPTION">
+   <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+<h1>Looking for Work</h1>
+  <div class="user_gallery">
+       <div class="row">
+         {{#robots}}
+         <a href="{{id}}">
+         <div class="card">
+           <img src="{{avatar}}"/>
+           <h1>{{name}}</h1>
+           {{#job}}
+             <p class="job">{{job}}</p>
+           {{/job}}
+           {{^job}}
+             <p class="hire">Available for hire</p>
+           {{/job}}
+         </div>
+         </a>
+         {{/robots}}
+       </div>
+     </div>
+</body>
+
+</html>
