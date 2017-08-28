@@ -18,6 +18,16 @@ app.set('view engine', 'mustache');
 
 //output = Mustache.render( template, data );
 
+app.use('/:dynamic', function (req, res) {
+  MongoClient.connect(mongoURL, function (err, db) {
+    const robots = db.collection('robots');
+    robots.find({'id': 5}).toArray(function(err, docs) {
+      console.log(docs);
+      res.render('user', {robots: docs})
+    })
+  })
+})
+
 app.use('/', function (req, res) {
   MongoClient.connect(mongoURL, function (err, db) {
     const robots = db.collection('robots');
@@ -27,15 +37,17 @@ app.use('/', function (req, res) {
   })
 })
 
-app.get('/', function(req, res){
-  //  res.render('index', user_profiles)
- }
-  );
+// app.get('/', function(req, res){
+//   //  res.render('index', user_profiles)
+//  }
+//   );
 
-app.get('/:dynamic', function(req, res){
-  res.render('user', user_profiles.users[req.params.dynamic-1])
+// app.get('/:dynamic', function(req, res){
+//   res.render('user', user_profiles.users[req.params.dynamic-1])
+//
+// });
 
-});
+
 
 app.listen(3000, function(){
   console.log("the app is running on port 3000!");
